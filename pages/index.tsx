@@ -40,9 +40,9 @@ export default function Home() {
       <Head>
         <title>Use Stitches with Next.js</title>
       </Head>
-      <Container size={{ '@initial': '1', '@bp1': '2' }}>
+      <Container size={{ '@initial': '2', '@bp1': '2' }}>
         <StitchesLogo />
-        <Text as="h1">Hello, from Stitches.</Text>
+        <Text as="h3">Hello, from Stitches.</Text>
         <Text>
           For full documentation, visit{' '}
           <Link href="https://stitches.dev">stitches.dev</Link>.
