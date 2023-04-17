@@ -1,8 +1,19 @@
 import Head from "next/head";
 import StitchesLogo from "../components/StitchesLogo";
 import { styled } from "../stitches.config";
+import { violet, blackA, mauve } from "@radix-ui/colors";
+import { keyframes } from "@stitches/react";
 
-const Box = styled("div", {});
+const overlayShow = keyframes({
+  "0%": { opacity: 0 },
+  "100%": { opacity: 1 },
+});
+
+const Box = styled("div", {
+  backgroundColor: violet.violet8,
+  height: "100vh",
+  width: "100vw",
+});
 
 const Text = styled("p", {
   fontFamily: "$system",
@@ -19,16 +30,37 @@ const Text = styled("p", {
   },
 });
 
-const Link = styled("a", {
-  fontFamily: "$system",
-  textDecoration: "none",
-  color: "$purple600",
+const Button = styled("button", {
+  all: "unset",
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: 4,
+  padding: "0 15px",
+  fontSize: 15,
+  lineHeight: 1,
+  fontWeight: 500,
+  height: 35,
+  backgroundColor: "$purple600",
+  variants: {
+    variant: {
+      violet: {
+        backgroundColor: "white",
+        color: violet.violet11,
+        boxShadow: `0 2px 10px ${blackA.blackA7}`,
+        "&:hover": { backgroundColor: mauve.mauve3 },
+        "&:focus": { boxShadow: `0 0 0 2px black` },
+      },
+    },
+  },
+  defaultVariants: {
+    variant: "violet",
+  },
 });
 
 const Container = styled("div", {
   marginX: "auto",
   paddingX: "$3",
-
   variants: {
     size: {
       1: {
@@ -48,17 +80,14 @@ export default function Home() {
   return (
     <Box css={{ paddingY: "$6" }}>
       <Head>
-        <title>Use Stitches with Next.js</title>
+        <title>Electricity recorder</title>
       </Head>
       <Container size={{ "@initial": "1", "@bp1": "3" }}>
         <StitchesLogo />
         <Text as="h1" size={{ "@initial": "1", "@bp1": "2" }}>
-          Hello, from Stitches.
+          Electricity recorder 🔋
         </Text>
-        <Text>
-          For full documentation, visit{" "}
-          <Link href="https://stitches.dev">stitches.dev</Link>.
-        </Text>
+        <Button>Start recording</Button>
       </Container>
     </Box>
   );
