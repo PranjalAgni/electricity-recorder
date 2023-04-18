@@ -4,11 +4,6 @@ import { styled } from "../stitches.config";
 import { violet, blackA, mauve } from "@radix-ui/colors";
 import { keyframes } from "@stitches/react";
 
-const overlayShow = keyframes({
-  "0%": { opacity: 0 },
-  "100%": { opacity: 1 },
-});
-
 const Box = styled("div", {
   backgroundColor: violet.violet8,
   height: "100vh",
