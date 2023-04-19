@@ -2,7 +2,6 @@ import Head from "next/head";
 import StitchesLogo from "../components/StitchesLogo";
 import { styled } from "../stitches.config";
 import { violet, blackA, mauve } from "@radix-ui/colors";
-import { keyframes } from "@stitches/react";
 
 const Box = styled("div", {
   backgroundColor: violet.violet8,
